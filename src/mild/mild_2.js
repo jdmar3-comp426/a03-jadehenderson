@@ -110,7 +110,7 @@ export function removeKeys(object, keyList) {
    // [keyList].forEach(d => delete object[d]);
    // return object;
    let result = {};
-   Object.assign({}, object);
+   Object.assign(result, object);
    for(let i=0; i<keyList.length; i++) {
       delete result[keyList[i]];
    }
