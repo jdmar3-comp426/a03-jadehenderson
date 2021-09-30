@@ -24,7 +24,7 @@ export function sumToString(a, b) {
  *
  */
 export function getIncreasingArray(startNumber, endNumber) {
-    var increasing = {};
+    var increasing = [];
     for(var i=startNumber; i<=endNumber; i++) {
         increasing.push(i);
     }
@@ -40,8 +40,8 @@ export function getIncreasingArray(startNumber, endNumber) {
  */
 export function maxAndMin(numbers) {
     var result = {};
-    result.min = Math.min(...numbers);
     result.max = Math.max(...numbers);
+    result.min = Math.min(...numbers);
     return result;
 }
 
@@ -58,10 +58,10 @@ export function maxAndMin(numbers) {
 export function countArray(array) {
     var frequency = {};
     array.forEach(i => {
-        if (freq[i]) {
-        freq[i]++;
+        if (frequency[i]) {
+        frequency[i]++;
     } else {
-        freq[i] = 1;
+        frequency[i] = 1;
     }
 });
     return frequency;
