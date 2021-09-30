@@ -108,4 +108,5 @@ export function removeKeys(object, keyList) {
    // var result = _.omit(object, keyList);
    // return result;
    [keyList].forEach(d => delete object[d]);
+   return object;
 }
