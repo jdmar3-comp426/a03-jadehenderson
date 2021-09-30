@@ -32,7 +32,7 @@ export function identifyArray(array) {
       var current = {};
       current.type = typeof array[i];
       current.value = array[i];
-      result[i].push(current);
+      result[i] = current;
    }
    return result;
 }
