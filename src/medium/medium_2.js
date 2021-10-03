@@ -27,10 +27,10 @@ export function getAvgMpg() {
         city += mpg_data[i].city_mpg;
         highway += mpg_data[i].highway_mpg;
     }
-    var average = {};
-    average.city = city/mpg_data.length;
-    average.highway = highway/mpg_data.length;
-    return average; 
+    cav = city/mpg_data.length;
+    hwav = highway/mpg_data.length;
+    return {city: cav, highway: hwav}; 
+
 }
 
 export function getAllYear() {
