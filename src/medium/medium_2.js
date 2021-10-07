@@ -120,18 +120,39 @@ export const allCarStats = {
  */
 
  export function getMakerHybrid(array) {
-     var makeswithhybrid = array.filter(h => h.hybrid === true);
+     var makeswithhybrid = array.filter(h =>h.make && (h.hybrid === true));
      var result = [];
      for (var i=0; i<makeswithhybrid.length; i++) {
          var current = {};
+         var hyids = [];
          current.make = makeswithhybrid[i];
-         current.hybrids = makeswithhybrid[i].id;
-         result[i] = current;
+         for (var j=0; j<array.length; j++) {
+            if (array[j].make == makeswithhybrid[i].make) {
+               var hybridids = makeswithhybrid.map(i => i.id);
+               if (hybridids > 0) {
+                hyids.push(makeswithhybrid[j].id);
+               }
+            }
+         }
+         current.hybrids = hyids;
+         result.push(current);
      }
      return result;
  }
 
+export function getAvgMpgYearHybrid(array) {
+    var result = {};
+    var year = array.map(y => y.year);
+    var ishybrid = array.filter(h => h.hybrid === true);
+    var nothybrid = array.filter(h => h.hybrid === false);
+    for (var i=0; i<year.length; i++) {
+        result[year[i]].hybrid = getAvgMpg(ishybrid.filter(y => y.year == year[i]));
+        result[year[i]].notHybrid = getAvgMpg(nothybrid.filter(y => y.year == year[i]));
+    }
+    return result; 
+}
+
 export const moreStats = {
     makerHybrids: getMakerHybrid(mpg_data),
-    avgMpgByYearAndHybrid: undefined
+    avgMpgByYearAndHybrid: getAvgMpgYearHybrid(mpg_data)
 };
