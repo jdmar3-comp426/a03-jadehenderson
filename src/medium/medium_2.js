@@ -120,7 +120,8 @@ export const allCarStats = {
  */
 
  export function getMakerHybrid(array) {
-     var makeswithhybrid = array.filter(h =>h.make && (h.hybrid === true));
+     var makes = array.map(m => m.make);
+     var makeswithhybrid = makes.filter(h => h.hybrid === true);
      var result = [];
      for (var i=0; i<makeswithhybrid.length; i++) {
          var current = {};
