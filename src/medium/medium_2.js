@@ -21,15 +21,15 @@ see under the methods section
  */
 
 export function getAvgMpg() {
-    var city = 0;
-    var highway = 0;
+    var cty = 0;
+    var hwy = 0;
     for (var i=0; i<mpg_data.length; i++) {
         city += mpg_data[i].city_mpg;
         highway += mpg_data[i].highway_mpg;
     }
     var average = {};
-    average.city = city/mpg_data.length;
-    average.highway = highway/mpg_data.length;
+    average.city = cty/mpg_data.length;
+    average.highway = hwy/mpg_data.length;
     return average; 
 
 }
@@ -147,8 +147,10 @@ export function getAvgMpgYearHybrid(array) {
     var ishybrid = array.filter(h => h.hybrid === true);
     var nothybrid = array.filter(h => h.hybrid === false);
     for (var i=0; i<year.length; i++) {
-        result[year[i]].hybrid = getAvgMpg(ishybrid.filter(y => y.year == year[i]));
-        result[year[i]].notHybrid = getAvgMpg(nothybrid.filter(y => y.year == year[i]));
+        var current = {};
+        current.hybrid = getAvgMpg(ishybrid.filter(y => y.year == year[i]));
+        current.notHybrid = getAvgMpg(nothybrid.filter(y => y.year == year[i]));
+        result[i] = current;
     }
     return result; 
 }
