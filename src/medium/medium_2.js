@@ -120,24 +120,24 @@ export const allCarStats = {
  */
 
  export function getMakerHybrid(array) {
-     var makeswithhybrid = array.filter(h => h.hybrid === true);
-     var result = [];
-     for (var i=0; i<makeswithhybrid.length; i++) {
-         var current = {};
-         var hyids = [];
-         current.make = makeswithhybrid[i];
-         for (var j=0; j<array.length; j++) {
-            if (array[j].make == makeswithhybrid[i].make) {
-               var hybridids = makeswithhybrid.map(i => i.id);
-               if (hybridids > 0) {
-                hyids.push(makeswithhybrid[j].id);
-               }
-            }
-         }
-         current.hybrids = hyids;
-         result.push(current);
-     }
-     return result;
+    //  var makeswithhybrid = array.filter(h => h.hybrid === true);
+    //  var result = [];
+    //  for (var i=0; i<makeswithhybrid.length; i++) {
+    //      var current = {};
+    //      var hyids = [];
+    //      current.make = makeswithhybrid[i];
+    //      for (var j=0; j<array.length; j++) {
+    //         if (array[j].make == makeswithhybrid[i].make) {
+    //            var hybridids = makeswithhybrid.map(i => i.id);
+    //            if (hybridids > 0) {
+    //             hyids.push(makeswithhybrid[j].id);
+    //            }
+    //         }
+    //      }
+    //      current.hybrids = hyids;
+    //      result.push(current);
+    //  }
+    //  return result;
  }
 
 export function getAvgMpgYearHybrid(array) {
