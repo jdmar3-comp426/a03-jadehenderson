@@ -120,42 +120,42 @@ export const allCarStats = {
  */
 
  export function getMakerHybrid(array) {
-     var makes = array.map(m => m.make);
-     var makeswithhybrid = makes.filter(h => h.hybrid === true);
-     var result = [];
-     for (var i=0; i<makeswithhybrid.length; i++) {
-         var current = {};
-         var hyids = [];
-         current.make = makeswithhybrid[i];
-         for (var j=0; j<array.length; j++) {
-            if (array[j].make == makeswithhybrid[i].make) {
-               var hybridids = makeswithhybrid.map(i => i.id);
-               if (hybridids > 0) {
-                hyids.push(makeswithhybrid[j].id);
-               }
-            }
-         }
-         current.hybrids = hyids;
-         result.push(current);
-     }
-     return result;
+    //  var makes = array.map(m => m.make);
+    //  var makeswithhybrid = makes.filter(h => h.hybrid === true);
+    //  var result = [];
+    //  for (var i=0; i<makeswithhybrid.length; i++) {
+    //      var current = {};
+    //      var hyids = [];
+    //      current.make = makeswithhybrid[i];
+    //      for (var j=0; j<array.length; j++) {
+    //         if (array[j].make == makeswithhybrid[i].make) {
+    //            var hybridids = makeswithhybrid.map(i => i.id);
+    //            if (hybridids > 0) {
+    //             hyids.push(makeswithhybrid[j].id);
+    //            }
+    //         }
+    //      }
+    //      current.hybrids = hyids;
+    //      result.push(current);
+    //  }
+    //  return result;
  }
 
 export function getAvgMpgYearHybrid(array) {
-    var result = {};
-    var year = array.map(y => y.year);
-    var ishybrid = array.filter(h => h.hybrid === true);
-    var nothybrid = array.filter(h => h.hybrid === false);
-    for (var i=0; i<year.length; i++) {
-        var current = {};
-        current.hybrid = getAvgMpg(ishybrid.filter(y => y.year == year[i]));
-        current.notHybrid = getAvgMpg(nothybrid.filter(y => y.year == year[i]));
-        result[i] = current;
-    }
-    return result; 
+    // var result = {};
+    // var year = array.map(y => y.year);
+    // var ishybrid = array.filter(h => h.hybrid === true);
+    // var nothybrid = array.filter(h => h.hybrid === false);
+    // for (var i=0; i<year.length; i++) {
+    //     var current = {};
+    //     current.hybrid = getAvgMpg(ishybrid.filter(y => y.year == year[i]));
+    //     current.notHybrid = getAvgMpg(nothybrid.filter(y => y.year == year[i]));
+    //     result[i] = current;
+    // }
+    // return result; 
 }
 
 export const moreStats = {
-    makerHybrids: getMakerHybrid(mpg_data),
-    avgMpgByYearAndHybrid: getAvgMpgYearHybrid(mpg_data)
+    // makerHybrids: getMakerHybrid(mpg_data),
+    // avgMpgByYearAndHybrid: getAvgMpgYearHybrid(mpg_data)
 };
