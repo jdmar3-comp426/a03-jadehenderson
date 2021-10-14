@@ -24,8 +24,8 @@ export function getAvgMpg() {
     var cty = 0;
     var hwy = 0;
     for (var i=0; i<mpg_data.length; i++) {
-        city += mpg_data[i].city_mpg;
-        highway += mpg_data[i].highway_mpg;
+        cty += mpg_data[i].city_mpg;
+        hwy += mpg_data[i].highway_mpg;
     }
     var average = {};
     average.city = cty/mpg_data.length;
