@@ -72,9 +72,11 @@ export function searchName(car_data, searchTerm) {
  */
 export function searchByYear(car_data, years) {
     var result = [];
-    for (var i=0; i<years.length; i++) {
-        var a = car_data.filter(curr => curr.year === years[i]);
-        result.push(a);
+    for (var i=0; i<car_data.length; i++) {
+        var curr = car_data[i];
+        if(years.includes(curr.year)) {
+            result.push(curr);
+        }
     }
     result.sort(function(a,b) {
         return b.year - a.year;
