@@ -120,7 +120,7 @@ export const allCarStats = {
  */
 
  export function getMakerHybrid() {
-    //I give up on this one 
+    //I give up on this one /
  }
 
 export function getAvgMpgYearHybrid() {
