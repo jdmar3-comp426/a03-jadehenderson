@@ -120,35 +120,11 @@ export const allCarStats = {
  */
 
  export function getMakerHybrid() {
-    //  var makeswithhybrid = mpg_data.filter(h => h.make && h.hybrid);
-    //  var result = [];
-    //  for (var i=0; i<makeswithhybrid.length; i++) {
-    //      var current = {};
-    //      var hyids = [];
-    //      current.make = makeswithhybrid[i];
-    //      for (var j=0; j<mpg_data.length; j++) {
-    //         if ((makeswithhybrid[i] == mpg_data[j].make) && mpg_data[j].hybrid) {
-    //             hyids.push(mpg_data[j].id);
-    //         }
-    //      }
-    //      current.hybrids = hyids;
-    //      result.push(current);
-    //  }
-    //  return result;
+    //I give up on this one 
  }
 
 export function getAvgMpgYearHybrid() {
-    // var result = {};
-    // var year = mpg_data.map(y => y.year);
-    // var ishybrid = mpg_data.filter(h => h.hybrid === true);
-    // var nothybrid = mpg_data.filter(h => h.hybrid === false);
-    // for (var i=0; i<year.length; i++) {
-    //     var current = {};
-    //     current.hybrid = getAvgMpg(ishybrid.filter(y => y.year == year[i]));
-    //     current.notHybrid = getAvgMpg(nothybrid.filter(y => y.year == year[i]));
-    //     result[year[i]] = current;
-    // }
-    // return result; 
+    //I give up on this one
 }
 
 export const moreStats = {
