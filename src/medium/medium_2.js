@@ -119,19 +119,16 @@ export const allCarStats = {
  * }
  */
 
- export function getMakerHybrid(array) {
-    //  var makeswithhybrid = array.filter(h => h.hybrid === true);
+ export function getMakerHybrid() {
+    //  var makeswithhybrid = mpg_data.filter(h => h.make && h.hybrid);
     //  var result = [];
     //  for (var i=0; i<makeswithhybrid.length; i++) {
     //      var current = {};
     //      var hyids = [];
     //      current.make = makeswithhybrid[i];
-    //      for (var j=0; j<array.length; j++) {
-    //         if (array[j].make == makeswithhybrid[i].make) {
-    //            var hybridids = makeswithhybrid.map(i => i.id);
-    //            if (hybridids > 0) {
-    //             hyids.push(makeswithhybrid[j].id);
-    //            }
+    //      for (var j=0; j<mpg_data.length; j++) {
+    //         if ((makeswithhybrid[i] == mpg_data[j].make) && mpg_data[j].hybrid) {
+    //             hyids.push(mpg_data[j].id);
     //         }
     //      }
     //      current.hybrids = hyids;
@@ -140,21 +137,21 @@ export const allCarStats = {
     //  return result;
  }
 
-export function getAvgMpgYearHybrid(array) {
+export function getAvgMpgYearHybrid() {
     // var result = {};
-    // var year = array.map(y => y.year);
-    // var ishybrid = array.filter(h => h.hybrid === true);
-    // var nothybrid = array.filter(h => h.hybrid === false);
+    // var year = mpg_data.map(y => y.year);
+    // var ishybrid = mpg_data.filter(h => h.hybrid === true);
+    // var nothybrid = mpg_data.filter(h => h.hybrid === false);
     // for (var i=0; i<year.length; i++) {
     //     var current = {};
     //     current.hybrid = getAvgMpg(ishybrid.filter(y => y.year == year[i]));
     //     current.notHybrid = getAvgMpg(nothybrid.filter(y => y.year == year[i]));
-    //     result[i] = current;
+    //     result[year[i]] = current;
     // }
     // return result; 
 }
 
 export const moreStats = {
-    // makerHybrids: getMakerHybrid(mpg_data),
-    // avgMpgByYearAndHybrid: getAvgMpgYearHybrid(mpg_data)
+    // makerHybrids: getMakerHybrid(),
+    // avgMpgByYearAndHybrid: getAvgMpgYearHybrid()
 };
