@@ -152,6 +152,6 @@ export function getAvgMpgYearHybrid() {
 }
 
 export const moreStats = {
-    // makerHybrids: getMakerHybrid(),
-    // avgMpgByYearAndHybrid: getAvgMpgYearHybrid()
+    makerHybrids: getMakerHybrid(),
+    avgMpgByYearAndHybrid: getAvgMpgYearHybrid()
 };
