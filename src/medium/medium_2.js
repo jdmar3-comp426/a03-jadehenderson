@@ -19,10 +19,45 @@ see under the methods section
  *
  * @param {allCarStats.ratioHybrids} ratio of cars that are hybrids
  */
+
+export function getAvgMpg() {
+    var cty = 0;
+    var hwy = 0;
+    for (var i=0; i<mpg_data.length; i++) {
+        cty += mpg_data[i].city_mpg;
+        hwy += mpg_data[i].highway_mpg;
+    }
+    var average = {};
+    average.city = cty/mpg_data.length;
+    average.highway = hwy/mpg_data.length;
+    return average; 
+
+}
+
+export function getAllYear() {
+    var years = [];
+    for (var i=0; i<mpg_data.length; i++) {
+        years.push(mpg_data[i].year);
+    }
+    return getStatistics(years);
+}
+
+export function getRatioHybrid() {
+    var hybrids = 0;
+    var allcars = 0;
+    for (var i=0; i<mpg_data.length; i++) {
+        if (mpg_data[i].hybrid) {
+            hybrids++;
+        }
+        allcars++;
+    }
+    return hybrids/allcars;
+}
+
 export const allCarStats = {
-    avgMpg: undefined,
-    allYearStats: undefined,
-    ratioHybrids: undefined,
+    avgMpg: getAvgMpg(),
+    allYearStats: getAllYear(),
+    ratioHybrids: getRatioHybrid(),
 };
 
 
@@ -83,7 +118,16 @@ export const allCarStats = {
  *
  * }
  */
+
+ export function getMakerHybrid() {
+    //I give up on this one /
+ }
+
+export function getAvgMpgYearHybrid() {
+    //I give up on this one
+}
+
 export const moreStats = {
-    makerHybrids: undefined,
-    avgMpgByYearAndHybrid: undefined
+    makerHybrids: getMakerHybrid(),
+    avgMpgByYearAndHybrid: getAvgMpgYearHybrid()
 };
